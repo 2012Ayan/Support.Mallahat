@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Mallahat — Soar Higher. A student election campaign experience.">
+<meta name="theme-color" content="#09070f">
+<title>Mallahat — Soar Higher</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2309070f'/%3E%3Cpath d='M8 32 39 7 29 27 57 23 39 38 50 54 27 42 16 58 20 38Z' fill='%23b86cff'/%3E%3Ccircle cx='43' cy='18' r='3' fill='white'/%3E%3C/svg%3E">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#09070f;--panel:rgba(255,255,255,.065);--panel2:rgba(255,255,255,.1);--white:#fff;--muted:#aaa4b6;--purple:#b86cff;--purple2:#7b2cff;--violet:#d9b8ff;--line:rgba(255,255,255,.18);--shadow:8px 8px 0 #000;--radius:24px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#fff;font-family:"Space Grotesk",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:32px 32px;z-index:-5}
+a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{cursor:pointer}
+.noise{position:fixed;inset:0;pointer-events:none;opacity:.025;z-index:20;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.blob{position:fixed;filter:blur(90px);border-radius:50%;opacity:.28;z-index:-3;animation:blob 12s ease-in-out infinite alternate}.b1{width:440px;height:440px;background:#7b2cff;left:-160px;top:-100px}.b2{width:500px;height:500px;background:#b86cff;right:-220px;top:30%}.b3{width:360px;height:360px;background:#4c1d95;left:35%;bottom:-180px;animation-delay:-5s}
+@keyframes blob{to{transform:translate(60px,-35px) scale(1.08)}}
+.glass{background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px)}
+.brutal{border:3px solid #fff;box-shadow:var(--shadow);border-radius:var(--radius)}
+.site-header{position:sticky;top:12px;z-index:15;width:min(1240px,calc(100% - 28px));margin:12px auto;padding:11px 14px;display:flex;align-items:center;gap:22px;border-radius:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.04em}.brand-mark{width:38px;height:38px;display:grid;place-items:center;background:#fff;color:#09070f;border-radius:50%;overflow:hidden}.brand-mark svg{width:31px;height:31px}
+nav{display:flex;gap:20px;margin-left:auto;font-size:13px;font-weight:600;color:#ddd8e4}nav a:hover{color:var(--violet)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:11px 17px;border:2px solid #fff;border-radius:13px;font-weight:800;box-shadow:5px 5px 0 #000;transition:.18s transform,.18s box-shadow,.18s background}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 #000}.btn-white{background:#fff;color:#09070f}.btn-purple{background:var(--purple);color:#09070f}.btn-dark{background:#14111b;color:#fff}.compact{min-height:36px;padding:7px 12px;box-shadow:3px 3px 0 #000;font-size:12px}
+.section,.hero{width:min(1240px,calc(100% - 28px));margin-inline:auto}
+.hero{min-height:760px;padding:100px 0 70px;display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
+.eyebrow{font-family:"DM Mono";font-size:11px;letter-spacing:.16em;color:#d8cce7}.hero h1{font-size:clamp(60px,9vw,122px);line-height:.82;letter-spacing:-.08em;margin:20px 0}.hero h1 span{color:var(--purple);text-shadow:4px 4px #000;-webkit-text-stroke:1.5px #fff}.lede{font-size:18px;line-height:1.6;color:#b7b1bf;max-width:650px}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.proof{display:flex;gap:30px;margin-top:40px}.proof div{display:grid;gap:5px}.proof b{font-family:"DM Mono";font-size:12px}.proof span{font-size:11px;color:#8f8997}
+.falcon-stage{height:600px;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 45%,rgba(184,108,255,.16),transparent 52%),rgba(255,255,255,.035)}
+.falcon-stage:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(255,255,255,.15);border-radius:50%;animation:spin 22s linear infinite}.ring{position:absolute;width:520px;height:210px;border:1px dashed rgba(184,108,255,.6);border-radius:50%;transform:rotate(-18deg);animation:orbit 8s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes orbit{50%{transform:rotate(-8deg) scale(1.04)}}
+.falcon{width:390px;height:300px;position:relative;filter:drop-shadow(12px 15px 0 #000);animation:falconFloat 3.7s ease-in-out infinite}
+@keyframes falconFloat{50%{transform:translateY(-16px) rotate(-1deg)}}
+.falcon .body{position:absolute;width:105px;height:180px;left:142px;top:70px;background:#fff;border-radius:54% 46% 44% 44%;transform:rotate(6deg)}
+.falcon .head{position:absolute;width:75px;height:75px;left:184px;top:35px;background:#fff;border-radius:50%}.falcon .eye{position:absolute;width:9px;height:9px;left:230px;top:61px;background:#09070f;border-radius:50%;z-index:2;box-shadow:0 0 12px var(--purple)}
+.falcon .beak{position:absolute;left:242px;top:68px;border-left:62px solid #fff;border-top:17px solid transparent;border-bottom:17px solid transparent}
+.falcon .wing{position:absolute;top:75px;width:210px;height:125px;background:linear-gradient(135deg,#fff 0%,#d9b8ff 100%);clip-path:polygon(100% 15%,0 0,44% 100%);transform-origin:100% 15%;animation:wing 1.9s ease-in-out infinite}
+.falcon .left{left:0;transform:scaleX(-1) rotate(-4deg)}.falcon .right{right:0;transform:rotate(-4deg);animation-delay:.05s}
+@keyframes wing{50%{transform:rotate(7deg) translateY(-9px)}}
+.falcon .left{animation-name:wingL}@keyframes wingL{50%{transform:scaleX(-1) rotate(7deg) translateY(-9px)}}
+.stage-label{position:absolute;bottom:18px;left:20px;right:20px;display:flex;justify-content:space-between;font-family:"DM Mono";font-size:10px;color:#cfc8d7}
+.ticker{overflow:hidden;border-block:2px solid #fff;background:#fff;color:#09070f;padding:12px 0;font-family:"DM Mono";font-size:14px;white-space:nowrap}.ticker div{animation:marquee 24s linear infinite}.ticker span{color:#7b2cff;margin:0 30px}@keyframes marquee{to{transform:translateX(-50%)}}
+.section{margin-top:120px;margin-bottom:120px}.heading{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:35px}.heading h2{font-size:clamp(42px,7vw,78px);line-height:.88;letter-spacing:-.07em;margin:10px 0}.heading p{max-width:430px;color:#aaa4b6;line-height:1.6}
+.manifesto{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.card{min-height:300px;padding:20px;background:var(--panel);position:relative;text-align:left;color:#fff;transition:.22s transform,.22s background}.card:hover{transform:translateY(-8px) rotate(-1deg);background:rgba(184,108,255,.12)}.card .num{font-family:"DM Mono";font-size:11px}.card .symbol{position:absolute;right:19px;top:17px;font-size:28px;color:var(--purple)}.card h3{font-size:28px;letter-spacing:-.04em;margin-top:105px;margin-bottom:8px}.card p{color:#9f99a7;font-size:13px;line-height:1.5}.card .plus{position:absolute;right:19px;bottom:18px;font-size:24px}.card.active{background:#fff;color:#09070f}.card.active p{color:#3f3a43}.card.active .symbol{color:#7b2cff}
+.suggestion{padding:35px;background:rgba(255,255,255,.05)}.suggestion-top{display:flex;justify-content:space-between;gap:25px}.counter{text-align:right}.counter strong{font-size:50px;line-height:.8}.counter small{font-family:"DM Mono";font-size:9px;display:block;color:#aaa4b6}.muted{color:#aaa4b6;line-height:1.55;max-width:750px}.form{margin-top:25px}.form label{display:block;font-size:12px;font-weight:700;margin-bottom:7px}.form textarea,.form input{width:100%;padding:13px;border:2px solid #fff;border-radius:11px;background:#0f0c16;color:#fff;outline:none}.form textarea{min-height:115px;resize:vertical}.row{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:10px}.wall{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}.egg{border:1px solid #fff;background:rgba(255,255,255,.06);padding:14px;border-radius:12px}.egg p{margin:0 0 10px;line-height:1.4}.egg small{color:#918b99}
+.arcade-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.game-card{padding:22px;background:rgba(255,255,255,.045);position:relative}.game-card h3{font-size:28px;margin:8px 0}.game-card p{color:#9993a1;font-size:13px}.game-screen{background:#050408;border:2px solid var(--line);height:310px;display:grid;place-items:center;overflow:hidden;position:relative}
+#pong{width:100%;height:auto;max-height:310px}.game-tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}.status{font-family:"DM Mono";font-size:10px;color:#aaa4b6}
+.reaction{width:250px;height:250px;border-radius:50%;border:3px solid #fff;position:relative;background:radial-gradient(circle at 50% 45%,#1c1528,#07050a);box-shadow:inset 0 0 50px rgba(184,108,255,.2)}.face{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:100%;height:100%}.eye{position:absolute;width:35px;height:45px;background:#fff;border-radius:50%;top:75px}.eye.left{left:63px}.eye.right{right:63px}.pupil{width:13px;height:17px;background:#09070f;border-radius:50%;position:absolute;left:11px;top:14px}.mouth{position:absolute;width:82px;height:28px;border-bottom:5px solid #fff;border-radius:0 0 50% 50%;left:84px;top:145px}.reaction.shake{animation:shake .4s}@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.memory{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:14px}.tile{border:2px solid #fff;background:#15101d;color:#fff;min-height:120px;border-radius:12px;font-size:30px}.tile.flipped,.tile.matched{background:var(--purple);color:#09070f}.tile span{visibility:hidden}.tile.flipped span,.tile.matched span{visibility:visible}
+.pong-score{text-align:center;font-family:"DM Mono";font-size:28px;margin-top:-8px}
+.timeline{padding:35px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:30px}.steps div{border-top:2px solid #fff;padding-top:12px;display:grid;gap:5px}.steps b{font-family:"DM Mono";color:var(--purple)}.steps strong{font-size:20px}.steps span{font-size:12px;color:#98929f}
+.footer{width:min(1240px,calc(100% - 28px));margin:0 auto 30px;border-top:2px solid #fff;padding:25px 0;display:flex;justify-content:space-between;gap:20px;color:#aaa4b6;font-size:12px}.links{display:flex;gap:18px}.links a:hover{color:#fff}
+.policy{width:min(980px,calc(100% - 28px));margin:100px auto}.policy h1{font-size:clamp(50px,8vw,90px);line-height:.88;letter-spacing:-.07em}.policy>p{max-width:700px;color:#aaa4b6;line-height:1.6}.policy-box{padding:30px;margin-top:30px}.policy-box h2{font-size:26px}.policy-box table{width:100%;border-collapse:collapse;margin-top:20px}.policy-box th,.policy-box td{border:1px solid #fff;padding:12px;text-align:left;vertical-align:top}.policy-box th{background:#fff;color:#09070f}.policy-box tr:nth-child(even) td{background:rgba(255,255,255,.045)}
+.error{min-height:85vh;display:grid;place-items:center;text-align:center;padding:30px}.error .num{font-size:150px;font-weight:900;line-height:.75;color:var(--purple);text-shadow:10px 10px #000;-webkit-text-stroke:2px #fff}.error h1{font-size:60px;letter-spacing:-.06em;margin:25px 0 10px}.error p{max-width:520px;color:#aaa4b6;line-height:1.5;margin:0 auto 25px}
+@media(max-width:900px){nav{display:none}.hero{grid-template-columns:1fr}.falcon-stage{height:500px}.manifesto{grid-template-columns:1fr 1fr}.arcade-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.wall{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.site-header .btn{display:none}.hero{padding-top:75px}.hero h1{font-size:62px}.falcon-stage{height:410px}.falcon{transform:scale(.72)}.heading,.suggestion-top{display:block}.counter{text-align:left;margin-top:20px}.manifesto,.wall,.steps{grid-template-columns:1fr}.row{grid-template-columns:1fr}.section{margin-top:80px;margin-bottom:80px}.game-screen{height:270px}.reaction{width:210px;height:210px}.eye{top:61px}.eye.left{left:52px}.eye.right{right:52px}.mouth{left:66px;top:122px}.footer{display:grid}.links{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="noise"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+
+<header class="site-header glass">
+<a class="brand" href="#top"><span class="brand-mark">
+<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 32 39 7 29 27 57 23 39 38 50 54 27 42 16 58 20 38Z" fill="currentColor"/></svg>
+</span>MALLAHAT</a>
+<nav><a href="#manifesto">Manifesto</a><a href="#suggestions">Suggestions</a><a href="#arcade">Arcade</a><a href="privacy.html">Privacy</a></nav>
+<a class="btn btn-white compact" href="#manifesto">Explore ↗</a>
+</header>
+
+<main id="top">
+<section class="hero">
+<div>
+<span class="eyebrow">SCHOOL ELECTIONS · 2026</span>
+<h1>Soar Higher<br><span>with Mallahat.</span></h1>
+<p class="lede">A campaign built around student voice, visible action, better communication, and a school community that moves forward together.</p>
+<div class="actions"><a class="btn btn-purple" href="#manifesto">See the mission ↗</a><a class="btn btn-dark" href="#suggestions">Drop an Egg 🥚</a></div>
+<div class="proof"><div><b>01</b><span>LISTEN FIRST</span></div><div><b>02</b><span>ACT CLEARLY</span></div><div><b>03</b><span>SOAR TOGETHER</span></div></div>
+</div>
+<div class="falcon-stage brutal glass">
+<div class="ring"></div>
+<div class="falcon" aria-label="Animated stylized falcon">
+<div class="wing left"></div><div class="wing right"></div><div class="body"></div><div class="head"></div><div class="eye"></div><div class="beak"></div>
+</div>
+<div class="stage-label"><span>FALCON SYSTEM / 01</span><strong>RISE ↑</strong></div>
+</div>
+</section>
+
+<div class="ticker"><div>LISTEN <span>✦</span> BUILD <span>✦</span> REPRESENT <span>✦</span> SOAR <span>✦</span> LISTEN <span>✦</span> BUILD <span>✦</span> REPRESENT <span>✦</span> SOAR <span>✦</span></div></div>
+
+<section id="manifesto" class="section">
+<div class="heading"><div><span class="eyebrow">THE MANIFESTO</span><h2>Big wings.<br>Clear plans.</h2></div><p>Interactive, energetic campaign ideas — presented clearly enough that students, teachers, and administration can understand the actual plan.</p></div>
+<div class="manifesto">
+<button class="card brutal" data-detail="A simple channel for students to raise ideas, concerns, and practical improvements — with updates on what happens next." aria-expanded="false"><span class="num">01</span><span class="symbol">◉</span><h3>Student Voice</h3><p>Make feedback visible.</p><span class="plus">+</span></button>
+<button class="card brutal" data-detail="Clear priorities, visible progress, and realistic timelines. No vague promises — just a public record of what is being worked on." aria-expanded="false"><span class="num">02</span><span class="symbol">▣</span><h3>Visible Action</h3><p>Show the work.</p><span class="plus">+</span></button>
+<button class="card brutal" data-detail="Academic life and student life should support each other. The goal is a more useful, welcoming, and organized school experience." aria-expanded="false"><span class="num">03</span><span class="symbol">↗</span><h3>Better Balance</h3><p>Build a stronger day.</p><span class="plus">+</span></button>
+<button class="card brutal" data-detail="Respect different opinions, keep discussions constructive, and make campaign participation safe and accessible to students." aria-expanded="false"><span class="num">04</span><span class="symbol">✦</span><h3>Respect First</h3><p>Lead with character.</p><span class="plus">+</span></button>
+</div>
+</section>
+
+<section id="suggestions" class="section">
+<div class="suggestion brutal glass">
+<div class="suggestion-top"><div><span class="eyebrow">LIVE SUGGESTION BOX</span><h2>Drop an Egg. 🥚</h2></div><div class="counter"><strong id="eggCount">0</strong><small>IDEAS ON THIS DEVICE</small></div></div>
+<p class="muted">Have an idea for school life? Leave a short suggestion. This static GitHub Pages version stores entries only in the current browser. A real shared submission system requires a secure backend.</p>
+<form class="form" id="suggestionForm"><label for="idea">YOUR IDEA</label><textarea id="idea" maxlength="240" required placeholder="“Could we have a clearer noticeboard for upcoming events?”"></textarea><div class="row"><input id="name" maxlength="40" placeholder="Optional name / nickname"><button class="btn btn-purple">Drop the Egg →</button></div></form>
+<div class="wall" id="wall"></div>
+</div>
+</section>
+
+<section id="arcade" class="section">
+<div class="heading"><div><span class="eyebrow">MALLAHAT ARCADE</span><h2>Play.<br>Reset.<br>Fly again.</h2></div><p>Three lightweight browser games. No accounts, downloads, or external game libraries required.</p></div>
+<div class="arcade-grid">
+
+<article class="game-card brutal glass"><span class="eyebrow">GAME 01 · PONG</span><h3>Falcon Pong</h3><p>First to 7. W/S controls the left paddle. Arrow keys control the right paddle.</p>
+<div class="game-screen"><canvas id="pong" width="900" height="500" aria-label="Falcon Pong game"></canvas></div>
+<div class="pong-score"><span id="ps">0</span> : <span id="cs">0</span></div>
+<div class="game-tools"><button class="btn btn-purple compact" id="startPong">Start / Restart</button><button class="btn btn-dark compact" id="pausePong">Pause</button><span class="status" id="pongStatus">Press Start.</span></div>
+</article>
+
+<article class="game-card brutal glass"><span class="eyebrow">GAME 02 · MEMORY</span><h3>Falcon Match</h3><p>Flip cards and match the symbols. Try to finish with as few moves as possible.</p>
+<div class="game-screen"><div class="memory" id="memory"></div></div>
+<div class="game-tools"><button class="btn btn-purple compact" id="resetMemory">New Game</button><span class="status" id="moves">0 moves</span></div>
+</article>
+
+<article class="game-card brutal glass"><span class="eyebrow">GAME 03 · REACTION</span><h3>Falcon Reflex</h3><p>Wait for the target to turn purple. Click as fast as you can. Don't jump the start.</p>
+<div class="game-screen"><div class="reaction" id="reaction"><div class="face"><div class="eye left"><i class="pupil"></i></div><div class="eye right"><i class="pupil"></i></div><div class="mouth"></div></div></div></div>
+<div class="game-tools"><button class="btn btn-purple compact" id="reactionBtn">Start Reflex Test</button><span class="status" id="reactionStatus">Ready.</span></div>
+</article>
+
+</div>
+</section>
+
+<section class="section">
+<div class="timeline brutal glass"><span class="eyebrow">CAMPAIGN RHYTHM</span><h2>From idea → action.</h2>
+<div class="steps"><div><b>01</b><strong>Listen</strong><span>Collect student priorities.</span></div><div><b>02</b><strong>Prioritize</strong><span>Separate useful, urgent, and realistic ideas.</span></div><div><b>03</b><strong>Communicate</strong><span>Explain what can happen and why.</span></div><div><b>04</b><strong>Report back</strong><span>Share progress instead of disappearing.</span></div></div>
+</div>
+</section>
+</main>
+
+<footer class="footer"><div><strong>MALLAHAT / SOAR HIGHER</strong><br>Student election campaign concept.</div><div class="links"><a href="privacy.html">Privacy & Cookies</a><a href="terms.html">Terms</a><a href="404.html">404</a></div></footer>
+
+<script>
+const $=s=>document.querySelector(s);
+document.querySelectorAll(".card").forEach(c=>c.addEventListener("click",()=>{const on=c.classList.toggle("active");c.setAttribute("aria-expanded",on);const p=c.querySelector("p");if(on){p.dataset.old=p.textContent;p.textContent=c.dataset.detail;c.querySelector(".plus").textContent="−"}else{p.textContent=p.dataset.old;c.querySelector(".plus").textContent="+"}}));
+
+const KEY="mallahat_eggs_v2";
+function esc(v){return String(v).replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[x]))}
+function eggs(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch{return[]}}
+function renderEggs(){let a=eggs(),w=$("#wall");$("#eggCount").textContent=a.length;w.innerHTML=a.slice(-6).reverse().map(x=>`<article class="egg"><p>${esc(x.text)}</p><small>${esc(x.name||"Anonymous")} · ${esc(x.date)}</small></article>`).join("")||`<article class="egg"><p>No eggs yet. Be the first.</p><small>Stored locally in this demo.</small></article>`}
+$("#suggestionForm").addEventListener("submit",e=>{e.preventDefault();let a=eggs();a.push({text:$("#idea").value.trim(),name:$("#name").value.trim(),date:new Date().toLocaleDateString()});localStorage.setItem(KEY,JSON.stringify(a.slice(-30)));e.target.reset();renderEggs()});renderEggs();
+
+const canvas=$("#pong"),ctx=canvas.getContext("2d"),W=canvas.width,H=canvas.height;let keys={},run=false,pause=false,aid,s={p:0,c:0},p={x:25,y:202,w:13,h:96},c={x:862,y:202,w:13,h:96},b={x:450,y:250,r:9,vx:6,vy:3};
+addEventListener("keydown",e=>{keys[e.key.toLowerCase()]=1;if(["ArrowUp","ArrowDown"," "].includes(e.key))e.preventDefault()});addEventListener("keyup",e=>keys[e.key.toLowerCase()]=0);
+function ball(dir=1){b={x:W/2,y:H/2,r:9,vx:6*dir,vy:(Math.random()-.5)*6}}
+function score(){ $("#ps").textContent=s.p;$("#cs").textContent=s.c}
+function resetP(){s={p:0,c:0};p.y=c.y=H/2-48;ball(Math.random()>.5?1:-1);score()}
+function hit(x){return b.x-b.r<x.x+x.w&&b.x+b.r>x.x&&b.y-b.r<x.y+x.h&&b.y+b.r>x.y}
+function end(w){run=false;$("#pongStatus").textContent=w+" win! Press Start / Restart."}
+function loop(){if(run&&!pause){if(keys.w)p.y-=7;if(keys.s)p.y+=7;if(keys.arrowup)c.y-=6;if(keys.arrowdown)c.y+=6;p.y=Math.max(0,Math.min(H-p.h,p.y));c.y=Math.max(0,Math.min(H-c.h,c.y));let t=b.y-c.h/2;c.y+=Math.max(-5,Math.min(5,t-c.y));b.x+=b.vx;b.y+=b.vy;if(b.y<b.r||b.y>H-b.r)b.vy*=-1;if(hit(p)&&b.vx<0){b.vx=Math.abs(b.vx)*1.04;b.vy+=(b.y-p.y-p.h/2)/18}if(hit(c)&&b.vx>0){b.vx=-Math.abs(b.vx)*1.04;b.vy+=(b.y-c.y-c.h/2)/18}if(b.x<0){s.c++;score();s.c>=7?end("CPU"):ball(-1)}if(b.x>W){s.p++;score();s.p>=7?end("You"):ball(1)}}draw();aid=requestAnimationFrame(loop)}
+function draw(){ctx.clearRect(0,0,W,H);ctx.strokeStyle="rgba(184,108,255,.5)";ctx.setLineDash([8,12]);ctx.beginPath();ctx.moveTo(W/2,0);ctx.lineTo(W/2,H);ctx.stroke();ctx.setLineDash([]);ctx.strokeStyle="#fff";ctx.lineWidth=3;ctx.strokeRect(4,4,W-8,H-8);ctx.fillStyle="#b86cff";ctx.fillRect(p.x,p.y,p.w,p.h);ctx.fillStyle="#fff";ctx.fillRect(c.x,c.y,c.w,c.h);ctx.beginPath();ctx.fillStyle="#b86cff";ctx.shadowBlur=18;ctx.shadowColor="#b86cff";ctx.arc(b.x,b.y,b.r,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0}
+$("#startPong").onclick=()=>{cancelAnimationFrame(aid);resetP();run=true;pause=false;$("#pongStatus").textContent="Game on — first to 7.";loop()};$("#pausePong").onclick=()=>{if(run){pause=!pause;$("#pongStatus").textContent=pause?"Paused.":"Game on — first to 7."}};draw();
+
+const icons=["✦","◈","◆","✧","⬟","◉","✺","◇"];let first=null,lock=false,moves=0;
+function memory(){let arr=[...icons,...icons].sort(()=>Math.random()-.5),m=$("#memory");m.innerHTML=arr.map((x,i)=>`<button class="tile" data-i="${i}" data-v="${x}"><span>${x}</span></button>`).join("");m.querySelectorAll(".tile").forEach(t=>t.onclick=()=>flip(t));moves=0;$("#moves").textContent="0 moves"}
+function flip(t){if(lock||t.classList.contains("flipped")||t.classList.contains("matched"))return;t.classList.add("flipped");if(!first){first=t;return}moves++;$("#moves").textContent=moves+" moves";if(first.dataset.v===t.dataset.v){first.classList.add("matched");t.classList.add("matched");first=null}else{lock=true;setTimeout(()=>{first.classList.remove("flipped");t.classList.remove("flipped");first=null;lock=false},600)}}
+$("#resetMemory").onclick=memory;memory();
+
+let timer=null,armed=false,startTime=0;
+$("#reaction").onclick=()=>{if(!armed)return;let ms=performance.now()-startTime;armed=false;clearTimeout(timer);$("#reaction").classList.remove("shake");$("#reactionStatus").textContent=Math.round(ms)+" ms — nice reflex!";};
+$("#reactionBtn").onclick=()=>{clearTimeout(timer);armed=false;$("#reactionStatus").textContent="Wait for purple…";$("#reaction").style.background="#17121f";timer=setTimeout(()=>{armed=true;startTime=performance.now();$("#reaction").style.background="var(--purple)";$("#reactionStatus").textContent="CLICK!";},1000+Math.random()*2500)};
+</script>
+</body>
+</html>
